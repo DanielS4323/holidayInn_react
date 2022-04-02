@@ -45,7 +45,9 @@ function Accommodations() {
     </div>
     </div>
     <div className='row'>
-    {accomms.map(accomm => <Accomodation key={accomm._id} accomm={accomm}/>)}
+    <div className="col">
+      {accomms.map(accomm => <Accomodation key={accomm._id} accomm={accomm}/>)}
+    </div>
     </div>
     
     </>

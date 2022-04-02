@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import defaultImage from "../../assets/images copy/hotel-default.jpg"
-
+import Rating from '@mui/material/Rating';
 
     
 
@@ -25,9 +25,10 @@ function Accomodation({ accomm }) {
               {accomm.city}, {accomm.country}
             </p>
             <p>{accomm.address}</p>
+            <Rating name="half-rating-read" size="large" value={Number(accomm.rating)} precision={0.5} readOnly />
           </div>
-    
       </div>
+     
     </Link>
   );
 }
