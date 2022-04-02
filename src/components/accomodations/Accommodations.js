@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import Accomodation from './Accomodation'
-import {v4 as uuidv4} from 'uuid'
 import { getAllAccoms, getPlaces } from "../../service/service";
 
 
@@ -45,7 +44,7 @@ function Accommodations() {
     </div>
     </div>
     <div className='row'>
-    <div className="col">
+    <div className="col d-flex align-items-center flex-column">
       {accomms.map(accomm => <Accomodation key={accomm._id} accomm={accomm}/>)}
     </div>
     </div>

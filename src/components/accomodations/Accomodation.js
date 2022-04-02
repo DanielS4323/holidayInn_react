@@ -15,18 +15,18 @@ function Accomodation({ accomm }) {
 
 
   return (
-    <Link to={`/details/${accomm._id}`}>
-      <div className="row my-2" style={{cursor:'pointer'}}>
-        <div className="col-6 text-center">
+    <Link className="row my-2" to={`/details/${accomm._id}`} style={{cursor:'pointer',textDecoration:'none'}}>
+      
+        <div className="col text-center">
          
-            <img className="img-fluid" style={{height:'300px', width:'450px'}} src={accomm.image ? `${imgUrl}/${accomm.image}` : `${defaultImage}`} />
+            <img className="img-fluid" src={accomm.image ? `${imgUrl}/${accomm.image}` : `${defaultImage}`} />
             <h5>{accomm.name}</h5>
             <p>
               {accomm.city}, {accomm.country}
             </p>
             <p>{accomm.address}</p>
             <Rating name="half-rating-read" size="large" value={Number(accomm.rating)} precision={0.5} readOnly />
-          </div>
+     
       </div>
      
     </Link>

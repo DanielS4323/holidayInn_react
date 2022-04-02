@@ -10,4 +10,5 @@ export const getAllAccoms = (select) => axios.get('http://localhost:3000/api/acc
     }
 })
 export const getDetails = (id) => axios.get(`http://localhost:3000/api/accommodations/${id}`)
+export const getReviews = (id) => axios.get(`http://localhost:3000/api/accommodations/${id}/reviews`)
 export const getPlaces = () => axios.get('http://localhost:3000/api/places')

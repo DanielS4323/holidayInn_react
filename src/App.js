@@ -13,11 +13,16 @@ function App() {
 
 
   return (
-  <>
   <div className="container">
-    <div className="row">
+  
+  
     <Router>
-     <img src={coverLogo} alt="" className="img-fluid" />
+
+     <div class="row">
+       <div class="col">
+         <img src={coverLogo} alt="" className="img-fluid" />
+         </div>
+         </div>
      <Home/>
     <Routes>
     <Route path="/accommodations" element={<Accommodations />}/>
@@ -27,10 +32,10 @@ function App() {
     
     </Routes>
     </Router>
-    </div>
+  
     
-  </div>
-    </>
+
+    </div>
   );
 }
 
