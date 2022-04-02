@@ -1,15 +1,16 @@
 import React, { useEffect, useState } from "react";
 import Accomodation from './Accomodation'
 import {v4 as uuidv4} from 'uuid'
-import { getPlaces } from "../../service/service";
+import { getAllAccoms, getPlaces } from "../../service/service";
 
 
 
 
-function Accommodations({accomms, SetSelect}) {
+function Accommodations() {
 
   const [places, SetPlaces] = useState([])
-
+  const [select, SetSelect] = useState('')
+  const [accomms, SetAccomms] = useState([])
 
   useEffect(() => {
     getPlaces().then(res => {
@@ -17,6 +18,12 @@ function Accommodations({accomms, SetSelect}) {
     })
   },[])
 
+  useEffect(() => {
+    getAllAccoms(select).then(res => {
+      SetAccomms(res.data)
+      
+    })
+  },[select])
   
 
 
