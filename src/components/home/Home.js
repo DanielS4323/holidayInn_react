@@ -10,13 +10,13 @@ const Home = () => {
         <div className="collapse navbar-collapse" id="navbarNav">
             <ul className="navbar-nav col">
                 <li className="nav-item">
-                    <a className="nav-link"><Link to='/accommodations'>Accommodations</Link></a>
+                   <Link className="nav-link" to='/accommodations'>Accommodations</Link>
                 </li>
                 <li className="nav-item">
-                    <a className="nav-link"><Link to='/add'>Add</Link></a>
+                    <Link className="nav-link" to='/add'>Add</Link>
                 </li>
-                <li className="nav-item ml-auto">
-                    <a className="nav-link"><Link to='/about'>About</Link></a>
+                <li className="nav-item">
+                    <Link className="nav-link" to='/about'>About</Link>
             </li>
             </ul>
         </div> 
