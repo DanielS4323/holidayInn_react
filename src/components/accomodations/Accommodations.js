@@ -30,9 +30,9 @@ function Accommodations() {
 
   return (
     <>
-    <div className='row'> 
-    <div className='col-4'>
-        <select onChange={(e) => {
+    <div className='row mb-4'> 
+    <div className='col-6'>
+        Sort By City: <select className="px-3" onChange={(e) => {
           SetSelect(e.target.value)
           
         }}>
@@ -43,11 +43,15 @@ function Accommodations() {
         </select>
 
     </div>
+    <div className="col">
+          Rating From:<input type='number' value={1} className='mx-3'/>
+          Rating To: <input type='number' value={5}/>
+    </div>
     </div>
     <div className='row'>
     <div className="col d-flex align-items-center flex-column">
       {accomms.map(accomm => <Accomodation key={accomm._id} accomm={accomm}/>)}
-          {accomms.length >= pgSize ? <button className="btn btn-secondary" onClick={() => {
+          {accomms.length >= pgSize ? <button className="btn btn-secondary my-3" onClick={() => {
             SetPgSize(prev => {
                prev += 5
                return prev
