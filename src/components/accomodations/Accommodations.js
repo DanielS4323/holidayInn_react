@@ -10,6 +10,7 @@ function Accommodations() {
   const [places, SetPlaces] = useState([])
   const [select, SetSelect] = useState('')
   const [accomms, SetAccomms] = useState([])
+  const [pgSize, SetPgSize] = useState(5)
 
   useEffect(() => {
     getPlaces().then(res => {
@@ -18,11 +19,11 @@ function Accommodations() {
   },[])
 
   useEffect(() => {
-    getAllAccoms(select).then(res => {
+    getAllAccoms(select, pgSize).then(res => {
       SetAccomms(res.data)
       
     })
-  },[select])
+  },[select,pgSize])
   
 
 
@@ -46,6 +47,14 @@ function Accommodations() {
     <div className='row'>
     <div className="col d-flex align-items-center flex-column">
       {accomms.map(accomm => <Accomodation key={accomm._id} accomm={accomm}/>)}
+          {accomms.length >= pgSize ? <button className="btn btn-secondary" onClick={() => {
+            SetPgSize(prev => {
+               prev += 5
+               return prev
+            })
+          }}>Load More</button>
+        : 
+        ''}
     </div>
     </div>
     

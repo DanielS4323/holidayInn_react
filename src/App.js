@@ -18,8 +18,8 @@ function App() {
   
     <Router>
 
-     <div class="row">
-       <div class="col">
+     <div className="row">
+       <div className="col">
          <img src={coverLogo} alt="" className="img-fluid" />
          </div>
          </div>

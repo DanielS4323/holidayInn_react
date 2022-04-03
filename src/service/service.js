@@ -1,7 +1,9 @@
 import axios from 'axios'
 
-export const getAllAccoms = (select) => axios.get('http://localhost:3000/api/accommodations',{
+export const getAllAccoms = (select,pgSize) => axios.get('http://localhost:3000/api/accommodations',{
     params: {
+        page: 1,
+        pageSize: pgSize,
         filter: {
             city: select,
             ratingFrom: '',

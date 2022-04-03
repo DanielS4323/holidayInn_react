@@ -2,7 +2,7 @@ import React from "react";
 import Rating from '@mui/material/Rating';
 
 
-function Review({detail, review, avgRate}) {
+function Review({review}) {
   return (
   
       <>
